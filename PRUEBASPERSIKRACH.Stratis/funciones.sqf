@@ -1,7 +1,8 @@
 fn_defaultLoadout = compile preprocessFileLineNumbers 'Persistencia\fn_defaultLoadout.sqf';
 fn_getLoadout = compile preprocessFileLineNumbers 'Persistencia\fn_getLoadout.sqf';
 fn_setLoadout = compile preprocessFileLineNumbers 'Persistencia\fn_setLoadout.sqf';
-fn_cargarjugador = compile preprocessFileLineNumbers 'Persistencia\CARGA\fn_cargarjugador.sqf';
+fn_restoreplayer = compile preprocessFileLineNumbers 'Persistencia\CARGA\fn_restoreplayer.sqf';
+fn_restoreHQ = compile preprocessFileLineNumbers 'Persistencia\CARGA\fn_restoreHQ.sqf';
 sfn_cargarjugador = compile preprocessFileLineNumbers 'Persistencia\CARGA\sfn_cargarjugador.sqf';
 fn_guardarjugador = compile preprocessFileLineNumbers 'Persistencia\GUARDADO\fn_guardarjugador.sqf';
 sfn_guardarjugador = compile preprocessFileLineNumbers 'Persistencia\GUARDADO\sfn_guardarjugador.sqf';

@@ -1,0 +1,250 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Soft_F_Truck",
+		"A3_Structures_F_EPB_Civ_PlayGround",
+		"a3_map_stratis",
+		"A3_Soft_F_HEMTT"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Soft_F_HEMTT",
+		"A3_Soft_F_Truck",
+		"A3_Structures_F_EPB_Civ_PlayGround",
+		"a3_map_stratis"
+	};
+	randomSeed=2048160;
+	class Intel
+	{
+		briefingName="KRACH PERSI V13";
+		resistanceWest=0;
+		startWeather=0.29999998;
+		startWind=0.099999994;
+		startWaves=0.099999994;
+		forecastWeather=0.29999998;
+		forecastWind=0.099999994;
+		forecastWaves=0.099999994;
+		forecastLightnings=0.099999994;
+		year=2035;
+		month=7;
+		day=6;
+		hour=12;
+		minute=0;
+		startFogBase=0.001;
+		forecastFogBase=0.001;
+		startFogDecay=0.0049999999;
+		forecastFogDecay=0.0049999999;
+	};
+	class Groups
+	{
+		items=2;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={1877.1357,5.5,5840.2183};
+					id=0;
+					side="WEST";
+					vehicle="B_diver_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+					syncId=0;
+					synchronizations[]={1};
+				};
+				class Item1
+				{
+					position[]={1881.4214,5.5,5839.8535};
+					id=1;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					syncId=1;
+					synchronizations[]={2,3,0};
+				};
+			};
+		};
+		class Item1
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={1874.1697,5.5,5835.4604};
+					id=2;
+					side="WEST";
+					vehicle="B_diver_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					syncId=2;
+					synchronizations[]={1};
+				};
+				class Item1
+				{
+					position[]={1881.4868,5.5,5834.8135};
+					id=3;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					syncId=3;
+					synchronizations[]={1};
+				};
+			};
+		};
+	};
+	class Vehicles
+	{
+		items=3;
+		class Item0
+		{
+			position[]={1882.2563,5.5,5854.9014};
+			azimut=-137.30624;
+			id=4;
+			side="EMPTY";
+			vehicle="B_Truck_01_transport_F";
+			skill=0.60000002;
+		};
+		class Item1
+		{
+			position[]={1891.6642,5.5,5836.4619};
+			azimut=24.009972;
+			id=5;
+			side="EMPTY";
+			vehicle="C_Van_01_transport_F";
+			skill=0.60000002;
+		};
+		class Item2
+		{
+			position[]={1877.3375,5.5,5827.9897};
+			azimut=-76.998596;
+			id=6;
+			side="EMPTY";
+			vehicle="Land_SlideCastle_F";
+			skill=0.60000002;
+			init="this addAction [""GUARDAR BASE DE DATOS"", ""guardartodo.sqf""]; this addAction [""CREARCAJA"", ""crearcaja.sqf""];";
+		};
+	};
+	class Markers
+	{
+		items=2;
+		class Item0
+		{
+			position[]={1852.9063,5.5,5841.8936};
+			name="respawn_west";
+			text="HQ";
+			type="mil_start";
+		};
+		class Item1
+		{
+			position[]={1910.7173,5.5,5841.6201};
+			name="respa2";
+			text="Ultima pos";
+			type="Empty";
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_stratis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_stratis"
+	};
+	randomSeed=5922875;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_stratis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_stratis"
+	};
+	randomSeed=13962234;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_stratis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_stratis"
+	};
+	randomSeed=10581768;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};

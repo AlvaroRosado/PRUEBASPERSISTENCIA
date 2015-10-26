@@ -12,6 +12,11 @@ waitUntil { _unit getVariable["cargacompleta", false] };
 _vcargacompleta = _unit getVariable["cargacompleta", false];
 _vdatos = _unit getVariable["datos", []];
 
+
+
+
+
+
 if (count _vdatos > 0 && _vcargacompleta) then {
 	_unit setPos (_vdatos select 0);
 	_unit setDir (_vdatos select 1);
@@ -22,9 +27,11 @@ if (count _vdatos > 0 && _vcargacompleta) then {
 
 	if (_vdatos select 6) then {
 	};
+		
 	while { alive _unit } do {
+		
 		_unit spawn fn_guardarjugador;
-		systemChat "Guardando jugador loop";
+		conYellowTime("Guardando jugador loop");
 		sleep 10;
 		};
 };
