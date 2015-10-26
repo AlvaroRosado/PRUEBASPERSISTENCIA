@@ -8,6 +8,8 @@ tf_no_auto_long_range_radio = true;
 enableSaving [false,false];
 #include "funciones.sqf"
 #include "debug_console.hpp"
+#include "define.hpp"
+
 enableSaving [false, false];
 if (isServer || isDedicated) then {
 	call compile preProcessFile "\iniDBI\init.sqf";
@@ -15,13 +17,5 @@ if (isServer || isDedicated) then {
 	execVM "Persistencia\CARGA\cargarcajas.sqf";
 	execVM "Persistencia\CARGA\cargartareas.sqf";
 	null=[]execVM "tareas\cache1.sqf";
-	}else{
-	waitUntil {!isNull player};
-	player setVariable["nombre", profileName, true];
-	player setVariable["cargacompleta", false, true];
-	player setVariable["datos", [], true];
-	player setVariable["rango", "PRIVATE", true];
-	player setVariable["rol", "DEFAULT", true];
-	player call fn_defaultLoadout;
-	player call fn_cargarjugador;
+	conWhite("Server TRUE");
 };
