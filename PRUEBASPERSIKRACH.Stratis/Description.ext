@@ -1,7 +1,7 @@
 class header {
 	gametype = COOP;
 	minplayers = 0;
-	maxplayers = 4;
+	maxplayers = 10;
 	playerCountMultipleOf = 1;  //Coop type missions use 1, Team type missions use 2
 };
 
@@ -26,3 +26,11 @@ corpseManagerMode = 1;
 corpseLimit = 35;
 wreckManagerMode = 1;
 wreckLimit = 10;
+
+// view distance script
+
+#include "CHVD\dialog.hpp"
+class CfgFunctions
+{
+    #include "CHVD\CfgFunctions.hpp"
+};

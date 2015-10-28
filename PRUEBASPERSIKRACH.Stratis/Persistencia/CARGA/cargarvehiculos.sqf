@@ -3,20 +3,21 @@ _exists = "vehiculos" call iniDB_exists;
 _vehcount = 0;
 if (!isNil "_exists" && {_exists}) then
 {	
-_vehcount = ["vehiculos", "Info", "TOTAL", "STRING"] call iniDB_read;
-_number = parseNumber _vehcount;
-if (_number > 0) then { 
-{
-			_veh = _x;
-if (alive _veh  && (_veh isKindOf "AllVehicles") && !(_veh isKindOf "Man" || _veh isKindOf "StaticWeapon") && ((isTouchingGround _veh || (getPos _veh) select 2 <= 1) )) then
-{		
-	deleteVehicle _veh;
-}
-else
-{
-};
-} forEach allMissionObjects "AllVehicles"; };
-for [{_i=1},{_i<=_number},{_i=_i+1}] do {
+	_vehcount = ["vehiculos", "Info", "TOTAL", "STRING"] call iniDB_read;
+	_number = parseNumber _vehcount;
+		if (_number > 0) then {
+		{
+					_veh = _x;
+				if (alive _veh  && (_veh isKindOf "AllVehicles") && !(_veh isKindOf "Man" || _veh isKindOf "StaticWeapon") && ((isTouchingGround _veh || (getPos _veh) select 2 <= 1) )) then
+				{		
+					deleteVehicle _veh;
+				}
+				else
+				{
+				};
+		} forEach allMissionObjects "AllVehicles";
+		
+	for [{_i=1},{_i<=_number},{_i=_i+1}] do {
 	_vehID = format ["Veh%1", _i];
 	_class = ["vehiculos", _vehID, "Class", "STRING"] call iniDB_read;
 	_pos = ["vehiculos", _vehID, "Position", "ARRAY"] call iniDB_read;
@@ -64,8 +65,7 @@ for [{_i=1},{_i<=_number},{_i=_i+1}] do {
 	};
 	
 
+										
+									};
+								};
 };
-} else {
-
-
-  };

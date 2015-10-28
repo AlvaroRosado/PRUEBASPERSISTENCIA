@@ -12,8 +12,14 @@ enableSaving [false,false];
 enableSaving [false, false];
 if (isServer || isDedicated) then {
 	call compile preProcessFile "\iniDBI\init.sqf";
+	sleep 0.2;
 	execVM "Persistencia\CARGA\cargarvehiculos.sqf";
+	sleep 0.2;
 	execVM "Persistencia\CARGA\cargarcajas.sqf";
+	sleep 0.2;
 	execVM "Persistencia\CARGA\cargartareas.sqf";
+	sleep 0.2;
+	execVM "Persistencia\CARGA\cargarotros.sqf";
+	sleep 0.2;
 	null=[]execVM "tareas\cache1.sqf";
 };
