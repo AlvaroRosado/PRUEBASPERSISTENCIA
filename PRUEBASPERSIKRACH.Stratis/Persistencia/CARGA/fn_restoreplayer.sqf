@@ -1,7 +1,3 @@
-#include "debug_console.hpp"
-
-conRed("Ejecutando cargarjugador");
-
 _unit = _this;
 _loadout = [_unit] call fn_getLoadout;
 
@@ -11,11 +7,6 @@ waitUntil { _unit getVariable["cargacompleta", false] };
 
 _vcargacompleta = _unit getVariable["cargacompleta", false];
 _vdatos = _unit getVariable["datos", []];
-
-
-
-
-
 
 if (count _vdatos > 0 && _vcargacompleta) then {
 	_unit setPos (_vdatos select 0);
@@ -31,7 +22,6 @@ if (count _vdatos > 0 && _vcargacompleta) then {
 	while { alive _unit } do {
 		
 		_unit spawn fn_guardarjugador;
-		conYellowTime("Guardando jugador loop");
 		sleep 10;
 		};
 };

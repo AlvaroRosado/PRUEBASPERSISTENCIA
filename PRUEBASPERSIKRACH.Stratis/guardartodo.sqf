@@ -1,6 +1,7 @@
 //GUARDANDO BASE DE DATOS
 
 //GUARDADO DE TAREAS Y ESTADO
+
 waitUntil {!isNil "FHQ_TTI_tasks"};
 _tareacount = 0;
 FHQ_TTI_TaskList call FHQ_TTI_UpdateTaskList;
@@ -11,7 +12,7 @@ FHQ_TTI_TaskList call FHQ_TTI_UpdateTaskList;
 	_estado = [_titulo] call FHQ_TT_getTaskState;
 	[[_tareacount, _titulo,_estado], "sfn_guardartarea", false, false, false] call BIS_fnc_MP;
 
-} forEach FHQ_TTI_TaskList;
+} forEach FHQ_TTI_TaskList; 
 
 //GUARDADO DE VEHÍCULOS 
 _vehCount = 0;

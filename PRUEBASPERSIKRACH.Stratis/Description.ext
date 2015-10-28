@@ -5,7 +5,7 @@ class header {
 	playerCountMultipleOf = 1;  //Coop type missions use 1, Team type missions use 2
 };
 
-author = Clan ESUS || Krachenko;
+author = Clan ESUS || Krachenko || Piratajr;
 onLoadIntroTime = true;
 onLoadMissionTime = true;
 onLoadName = PRUEBAS DE PERSISTENCIA;
@@ -19,7 +19,7 @@ RespawnDialog = 0;
 disabledAI = 1;
 enableDebugConsole = 1;
 allowFunctionsRecompile = 1;
-joinUnassigned = 0;
+joinUnassigned = 1;
 
 
 corpseManagerMode = 1;

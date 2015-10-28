@@ -8,7 +8,10 @@ class Mission
 		"A3_Soft_F_Truck",
 		"A3_Structures_F_EPB_Civ_PlayGround",
 		"a3_map_stratis",
-		"A3_Soft_F_HEMTT"
+		"A3_Soft_F_HEMTT",
+		"A3_Static_F_Gamma",
+		"a3_static_f",
+		"A3_Weapons_F_Ammoboxes"
 	};
 	addOnsAuto[]=
 	{
@@ -17,12 +20,15 @@ class Mission
 		"A3_Soft_F_HEMTT",
 		"A3_Soft_F_Truck",
 		"A3_Structures_F_EPB_Civ_PlayGround",
+		"A3_Static_F_Gamma",
+		"a3_static_f",
+		"A3_Weapons_F_Ammoboxes",
 		"a3_map_stratis"
 	};
 	randomSeed=2048160;
 	class Intel
 	{
-		briefingName="KRACH PERSI V13";
+		briefingName="KRACH PERSI V28";
 		resistanceWest=0;
 		startWeather=0.29999998;
 		startWind=0.099999994;
@@ -43,78 +49,75 @@ class Mission
 	};
 	class Groups
 	{
-		items=2;
+		items=1;
 		class Item0
 		{
 			side="WEST";
 			class Vehicles
 			{
-				items=2;
+				items=5;
 				class Item0
 				{
-					position[]={1877.1357,5.5,5840.2183};
+					position[]={1880.3141,5.5,5837.7939};
 					id=0;
 					side="WEST";
-					vehicle="B_diver_F";
-					player="PLAYER COMMANDER";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					syncId=0;
-					synchronizations[]={1};
+					text="oka2";
 				};
 				class Item1
 				{
-					position[]={1881.4214,5.5,5839.8535};
+					position[]={1877.0847,5.5,5835.8413};
 					id=1;
 					side="WEST";
-					vehicle="B_Soldier_SL_F";
-					player="PLAY CDG";
+					vehicle="B_soldier_LAT_F";
+					player="PLAYER COMMANDER";
 					skill=0.60000002;
-					syncId=1;
-					synchronizations[]={2,3,0};
+					text="oka1";
 				};
-			};
-		};
-		class Item1
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=2;
-				class Item0
+				class Item2
 				{
-					position[]={1874.1697,5.5,5835.4604};
+					position[]={1878.1074,5.5,5833.2847};
 					id=2;
 					side="WEST";
-					vehicle="B_diver_F";
+					vehicle="B_Soldier_GL_F";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
-					syncId=2;
-					synchronizations[]={1};
+					text="olakase2_1_1";
 				};
-				class Item1
+				class Item3
 				{
-					position[]={1881.4868,5.5,5834.8135};
+					position[]={1881.1531,5.5,5833.3955};
 					id=3;
 					side="WEST";
-					vehicle="B_Soldier_SL_F";
+					vehicle="B_Soldier_A_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					syncId=3;
-					synchronizations[]={1};
+					text="olakase2_1";
+				};
+				class Item4
+				{
+					position[]={1883.7988,5.5,5835.5293};
+					id=4;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="olakase2";
 				};
 			};
 		};
 	};
 	class Vehicles
 	{
-		items=3;
+		items=6;
 		class Item0
 		{
 			position[]={1882.2563,5.5,5854.9014};
 			azimut=-137.30624;
-			id=4;
+			id=5;
 			side="EMPTY";
 			vehicle="B_Truck_01_transport_F";
 			skill=0.60000002;
@@ -123,7 +126,7 @@ class Mission
 		{
 			position[]={1891.6642,5.5,5836.4619};
 			azimut=24.009972;
-			id=5;
+			id=6;
 			side="EMPTY";
 			vehicle="C_Van_01_transport_F";
 			skill=0.60000002;
@@ -132,29 +135,50 @@ class Mission
 		{
 			position[]={1877.3375,5.5,5827.9897};
 			azimut=-76.998596;
-			id=6;
+			id=7;
 			side="EMPTY";
 			vehicle="Land_SlideCastle_F";
 			skill=0.60000002;
 			init="this addAction [""GUARDAR BASE DE DATOS"", ""guardartodo.sqf""]; this addAction [""CREARCAJA"", ""crearcaja.sqf""];";
 		};
+		class Item3
+		{
+			position[]={1869.1711,5.5,5846.981};
+			id=8;
+			side="EMPTY";
+			vehicle="B_GMG_01_high_weapon_F";
+			skill=0.60000002;
+		};
+		class Item4
+		{
+			position[]={1867.9165,5.5,5844.6191};
+			id=9;
+			side="EMPTY";
+			vehicle="B_supplyCrate_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			text="ammo1";
+		};
+		class Item5
+		{
+			position[]={1867.6211,5.5,5842.3311};
+			id=10;
+			side="EMPTY";
+			vehicle="Box_IND_Support_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			text="ammo2";
+		};
 	};
 	class Markers
 	{
-		items=2;
+		items=1;
 		class Item0
 		{
-			position[]={1852.9063,5.5,5841.8936};
+			position[]={1904.4833,5.5,5822.7676};
 			name="respawn_west";
 			text="HQ";
 			type="mil_start";
-		};
-		class Item1
-		{
-			position[]={1910.7173,5.5,5841.6201};
-			name="respa2";
-			text="Ultima pos";
-			type="Empty";
 		};
 	};
 };
