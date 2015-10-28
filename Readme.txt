@@ -1,16 +1,16 @@
- 			 Modulo persistente Clan *ESUS*
+ Modulo persistente Clan *ESUS*
 		
-			----------------------------
+----------------------------
 
-			 Mods necesarios:
+ Mods necesarios:
 			
-			- Perfil "PERMANENTE" ESUS.	
-			- inidbi (solo en server)
+- Perfil "PERMANENTE" ESUS.	
+- inidbi (solo en server)
 
 
-			Changelog :
+Changelog :
 
-			- v40:
-				- Añadido CHVD (view distance plugin)
-				- Añadidas funciones para guardar "Otros", objetos que no sean ammobox o vehiculos.
- 				- Readme updated. necesarios nuevos addons
+v40:
+- AÃ±adido CHVD (view distance plugin)
+- AÃ±adidas funciones para guardar "Otros", objetos que no sean ammobox o vehiculos.
+- Readme updated. necesarios nuevos addons
