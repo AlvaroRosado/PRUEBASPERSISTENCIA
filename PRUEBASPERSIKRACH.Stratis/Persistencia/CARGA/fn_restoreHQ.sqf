@@ -1,7 +1,3 @@
-#include "debug_console.hpp"
-
-conWhite("Respawneando en HQ.");
-
 _unit = _this;
 _loadout = [_unit] call fn_getLoadout;
 
@@ -24,7 +20,6 @@ if (count _vdatos > 0 && _vcargacompleta) then {
 	while { alive _unit } do {
 		
 		_unit spawn fn_guardarjugador;
-		conYellowTime("Guardando jugador loop");
 		sleep 10;
 		};
 };

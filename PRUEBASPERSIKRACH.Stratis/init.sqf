@@ -7,7 +7,6 @@ call compile preprocessFileLineNumbers "briefing.sqf";
 tf_no_auto_long_range_radio = true;
 enableSaving [false,false];
 #include "funciones.sqf"
-#include "debug_console.hpp"
 #include "define.hpp"
 
 enableSaving [false, false];
@@ -17,5 +16,4 @@ if (isServer || isDedicated) then {
 	execVM "Persistencia\CARGA\cargarcajas.sqf";
 	execVM "Persistencia\CARGA\cargartareas.sqf";
 	null=[]execVM "tareas\cache1.sqf";
-	conWhite("Server TRUE");
 };

@@ -1,7 +1,3 @@
-#include "debug_console.hpp"
-
-conRed("Ejecutando cargarjugador");
-
 _unit = _this;
 _loadout = [_unit] call fn_getLoadout;
 
