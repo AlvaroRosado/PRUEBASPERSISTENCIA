@@ -9,26 +9,42 @@ class Mission
 		"A3_Structures_F_EPB_Civ_PlayGround",
 		"a3_map_stratis",
 		"A3_Soft_F_HEMTT",
-		"A3_Static_F_Gamma",
-		"a3_static_f",
-		"A3_Weapons_F_Ammoboxes"
+		"A3_Weapons_F_Ammoboxes",
+		"A3_Supplies_F_Heli_Slingload",
+		"A3_Air_F_Heli_Heli_Transport_04",
+		"A3_Structures_F_Mil_Shelters",
+		"A3_Structures_F_Civ_InfoBoards",
+		"3DEN",
+		"a3_modules_f_curator_curator",
+		"A3_Structures_F_Civ_Market",
+		"rhsusf_c_troops",
+		"lop_faction_un",
+		"lop_faction_tka"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
+		"3DEN",
+		"a3_modules_f_curator_curator",
+		"rhsusf_c_troops",
 		"A3_Soft_F_HEMTT",
 		"A3_Soft_F_Truck",
 		"A3_Structures_F_EPB_Civ_PlayGround",
-		"A3_Static_F_Gamma",
-		"a3_static_f",
 		"A3_Weapons_F_Ammoboxes",
+		"A3_Supplies_F_Heli_Slingload",
+		"A3_Air_F_Heli_Heli_Transport_04",
+		"A3_Structures_F_Mil_Shelters",
+		"A3_Structures_F_Civ_InfoBoards",
+		"A3_Structures_F_Civ_Market",
+		"lop_faction_un",
+		"lop_faction_tka",
 		"a3_map_stratis"
 	};
 	randomSeed=2048160;
 	class Intel
 	{
-		briefingName="KRACH PERSI V28";
+		briefingName="PERSISTENTE ESUS ALPHA V40";
 		resistanceWest=0;
 		startWeather=0.29999998;
 		startWind=0.099999994;
@@ -49,7 +65,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=1;
+		items=3;
 		class Item0
 		{
 			side="WEST";
@@ -66,6 +82,8 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="oka2";
+					syncId=0;
+					synchronizations[]={1};
 				};
 				class Item1
 				{
@@ -109,15 +127,110 @@ class Mission
 				};
 			};
 		};
+		class Item1
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={1846.4723,5.5,5850.3667};
+					class args
+					{
+						items=4;
+						class Item0
+						{
+							value="#adminLogged";
+							parentCls="ModuleCurator_F";
+							typeName="Owner";
+						};
+						class Item1
+						{
+							value="";
+							parentCls="ModuleCurator_F";
+							typeName="Name";
+						};
+						class Item2
+						{
+							value="3";
+							parentCls="ModuleCurator_F";
+							typeName="Addons";
+						};
+						class Item3
+						{
+							value="0";
+							parentCls="ModuleCurator_F";
+							typeName="Forced";
+						};
+					};
+					id=5;
+					side="LOGIC";
+					vehicle="ModuleCurator_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="myCurator";
+					syncId=1;
+					synchronizations[]={0};
+				};
+			};
+		};
+		class Item2
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={1891.1213,5.5,5852.4609};
+					id=6;
+					side="WEST";
+					vehicle="rhsusf_army_ucp_teamleader";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.5;
+				};
+				class Item1
+				{
+					position[]={1886.1213,5.5,5847.4609};
+					id=7;
+					side="WEST";
+					vehicle="rhsusf_army_ucp_autorifleman";
+					player="PLAY CDG";
+					skill=0.40000001;
+				};
+				class Item2
+				{
+					position[]={1896.1213,5.5,5847.4609};
+					id=8;
+					side="WEST";
+					vehicle="rhsusf_army_ucp_riflemanat";
+					player="PLAY CDG";
+					skill=0.40000001;
+				};
+				class Item3
+				{
+					position[]={1894.1213,5.5,5847.4609};
+					id=9;
+					side="WEST";
+					vehicle="rhsusf_army_ucp_grenadier";
+					player="PLAY CDG";
+					skill=0.40000001;
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=6;
+		items=11;
 		class Item0
 		{
 			position[]={1882.2563,5.5,5854.9014};
 			azimut=-137.30624;
-			id=5;
+			id=10;
 			side="EMPTY";
 			vehicle="B_Truck_01_transport_F";
 			skill=0.60000002;
@@ -126,7 +239,7 @@ class Mission
 		{
 			position[]={1891.6642,5.5,5836.4619};
 			azimut=24.009972;
-			id=6;
+			id=11;
 			side="EMPTY";
 			vehicle="C_Van_01_transport_F";
 			skill=0.60000002;
@@ -135,7 +248,7 @@ class Mission
 		{
 			position[]={1877.3375,5.5,5827.9897};
 			azimut=-76.998596;
-			id=7;
+			id=12;
 			side="EMPTY";
 			vehicle="Land_SlideCastle_F";
 			skill=0.60000002;
@@ -143,31 +256,72 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={1869.1711,5.5,5846.981};
-			id=8;
-			side="EMPTY";
-			vehicle="B_GMG_01_high_weapon_F";
-			skill=0.60000002;
-		};
-		class Item4
-		{
 			position[]={1867.9165,5.5,5844.6191};
-			id=9;
+			id=13;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
 			text="ammo1";
 		};
-		class Item5
+		class Item4
 		{
-			position[]={1867.6211,5.5,5842.3311};
-			id=10;
+			position[]={1863.1924,5.5,5836.4263};
+			id=14;
 			side="EMPTY";
 			vehicle="Box_IND_Support_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
 			text="ammo2";
+		};
+		class Item5
+		{
+			position[]={1871.9515,5.5,5867.8218};
+			id=15;
+			side="EMPTY";
+			vehicle="B_Slingload_01_Fuel_F";
+			skill=0.60000002;
+		};
+		class Item6
+		{
+			position[]={1858.3212,5.5,5814.4067};
+			id=16;
+			side="EMPTY";
+			vehicle="Land_Pod_Heli_Transport_04_bench_F";
+			skill=0.60000002;
+		};
+		class Item7
+		{
+			position[]={1870.205,5.5037622,5810.4951};
+			id=17;
+			side="EMPTY";
+			vehicle="CamoNet_BLUFOR_F";
+			skill=0.60000002;
+		};
+		class Item8
+		{
+			position[]={1886.6648,5.5174537,5809.0186};
+			id=18;
+			side="EMPTY";
+			vehicle="MapBoard_stratis_F";
+			skill=0.60000002;
+		};
+		class Item9
+		{
+			position[]={1860.3262,5.5,5827.6816};
+			id=19;
+			side="EMPTY";
+			vehicle="Land_CratesWooden_F";
+			skill=0.60000002;
+			init="0 = [""AmmoboxInit"",[this,true]] spawn BIS_fnc_arsenal;";
+		};
+		class Item10
+		{
+			position[]={1817.3698,5.5,5829.5044};
+			id=20;
+			side="EMPTY";
+			vehicle="LOP_UN_Mi8MTV3_FAB";
+			skill=0.40000001;
 		};
 	};
 	class Markers

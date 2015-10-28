@@ -48,8 +48,26 @@ else
 
 } forEach allMissionObjects "ReammoBox_F";
 
-hint format ["Base de Datos Guardada!\n Número de vehículos guardados: %1\n  Número de cajas guardadas: %2\n Número de tareas guardadas: %3\n",_vehcount,_objCount,_tareacount];
-[[_vehCount], "fn_guardartotalveh", false, false, false] call BIS_fnc_MP;
-[[_objCount], "fn_guardartotalcaj", false, false, false] call BIS_fnc_MP;
-[[_tareacount], "fn_guardartotaltareas", false, false, false] call BIS_fnc_MP;
+//GUARDADO TODO otros
+
+	_otrosCount = 0;
+	{
+				_otros = _x;
+	if (alive _otros  &&  !(_otros isKindOf "AllVehicles" || _otros isKindOf "Man" || _otros isKindOf "ReammoBox_F" || _otros isKindOf "Logic")) then 
+	{		
+		_otrosCount = _otrosCount + 1;
+		_props = [_otros] call fn_getboxProperties;
+		[[_otros, _otrosCount,_props], "sfn_guardarotros", false, false, false] call BIS_fnc_MP;
+	}
+	else
+	{
+	diag_log "ERROR SCRIPT OTROS";
+	};
+	} forEach allMissionObjects "All";
+
+	hint format ["Base de Datos Guardada!\n Número de vehículos guardados: %1\n  Número de cajas guardadas: %2\n Número de tareas guardadas: %3\n Número de objetos guardados: %4\n",_vehcount,_objCount,_tareacount,_otrosCount];
+	[[_vehCount], "fn_guardartotalveh", false, false, false] call BIS_fnc_MP;
+	[[_objCount], "fn_guardartotalcaj", false, false, false] call BIS_fnc_MP;
+	[[_tareacount], "fn_guardartotaltareas", false, false, false] call BIS_fnc_MP;
+	[[_otrosCount], "fn_guardartotalotros", false, false, false] call BIS_fnc_MP;
 
