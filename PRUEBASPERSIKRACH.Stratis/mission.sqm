@@ -326,13 +326,19 @@ class Mission
 	};
 	class Markers
 	{
-		items=1;
+		items=2;
 		class Item0
 		{
 			position[]={1904.4833,5.5,5822.7676};
 			name="respawn_west";
 			text="HQ";
 			type="mil_start";
+		};
+		class Item1
+		{
+			position[]={1907.3265,5.6570864,5776.9194};
+			name="cache1";
+			type="Empty";
 		};
 	};
 };

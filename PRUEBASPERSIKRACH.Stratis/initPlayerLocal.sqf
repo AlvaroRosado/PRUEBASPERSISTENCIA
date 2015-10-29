@@ -1,4 +1,5 @@
 //del else
+if (hasInterface && !isDedicated) then {
 	waitUntil {!isNull player};
 	player setVariable["nombre", profileName, true];
 	player setVariable["cargacompleta", false, true];
@@ -30,6 +31,7 @@ closeDialog 0;
 		};
 	
 	
+};
 	
 	
 	
