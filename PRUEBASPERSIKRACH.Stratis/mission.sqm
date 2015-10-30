@@ -44,7 +44,7 @@ class Mission
 	randomSeed=2048160;
 	class Intel
 	{
-		briefingName="PERSISTENTE ESUS ALPHA V41";
+		briefingName="PERSISTENTE ESUS ALPHA V40";
 		resistanceWest=0;
 		startWeather=0.29999998;
 		startWind=0.099999994;

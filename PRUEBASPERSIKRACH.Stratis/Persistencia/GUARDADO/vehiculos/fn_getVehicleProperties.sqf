@@ -132,4 +132,5 @@ if (_flying && {getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") <= 
 {
 	_props deleteRange [1,3];
 };
-	_props
+
+_props
