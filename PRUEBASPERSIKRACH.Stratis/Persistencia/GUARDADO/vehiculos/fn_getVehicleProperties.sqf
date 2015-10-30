@@ -28,6 +28,10 @@ _weapons = [];
 _magazines = [];
 _items = [];
 _backpacks = [];
+_backpackscontenido = [];
+_mochilamagazine = [];
+_mochilaitem = [];
+_mochilaweapon = [];
 
 if (_class call fn_hasInventory) then
 {
@@ -35,6 +39,17 @@ if (_class call fn_hasInventory) then
 	_magazines = _veh call fn_magazineAmmoCargo;
 	_items = (getItemCargo _veh) call cargoToPairs;
 	_backpacks = (getBackpackCargo _veh) call cargoToPairs;      
+	_vehicleBackpacks = everyBackpack _veh;
+	{
+_classname = typeOf _x;
+_mochilamagazine = getMagazineCargo _x;
+_mochilaitem = getitemCargo _x;
+_mochilaweapon = getweaponCargo _x;
+if ((count (_mochilamagazine select 0) == 0) and (count (_mochilaitem select 0) == 0) and (count (_mochilaweapon select 0) == 0) ) then {  
+ }
+else {if (count _backpackscontenido == 0) then { _backpackscontenido = [_classname] + [_mochilaweapon] + [_mochilaitem] + [_mochilamagazine];} else {_backpackscontenido = [_backpackscontenido] + [_classname] + [_mochilaweapon] + [_mochilaitem] + [_mochilamagazine];
+};} ;
+} forEach _vehicleBackpacks;
 };
 
 _turretMags = magazinesAmmo _veh;
@@ -102,8 +117,8 @@ _props =
 	["Magazines", _magazines],
 	["Items", _items],
 	["Backpacks", _backpacks],
-
-	["TurretMagazines", _turretMags],
+	["BackpacksContenido", _backpackscontenido],
+    ["TurretMagazines", _turretMags],
 	["TurretMagazines2", _turretMags2],
 	["TurretMagazines3", _turretMags3],
 
@@ -117,5 +132,4 @@ if (_flying && {getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") <= 
 {
 	_props deleteRange [1,3];
 };
-
-_props
+	_props

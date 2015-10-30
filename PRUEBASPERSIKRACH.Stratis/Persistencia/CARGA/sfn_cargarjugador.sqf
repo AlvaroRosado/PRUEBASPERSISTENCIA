@@ -14,7 +14,6 @@ _result = [];
 
 _nombre = _unit getVariable["nombre", ""];
 if (_nombre == "") exitWith {};
-
 _idplayer = format["%1_%2", _puid, (_nombre call iniDB_CRC32)];
 
 _prRank = ["jugadores", _idplayer, "rango", "STRING"] call iniDB_read;

@@ -18,9 +18,10 @@ if (count _vdatos > 0 && _vcargacompleta) then {
 
 	if (_vdatos select 6) then {
 	};
+		
 	while { alive _unit } do {
+		
 		_unit spawn fn_guardarjugador;
-		systemChat "Guardando jugador loop";
 		sleep 10;
 		};
 };

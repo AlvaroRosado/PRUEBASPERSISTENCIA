@@ -35,7 +35,7 @@ _repairCargo = getRepairCargo _obj;
 if (isNil "_ammoCargo" || {!finite _ammoCargo}) then { _ammoCargo = 0 };
 if (isNil "_fuelCargo" || {!finite _fuelCargo}) then { _fuelCargo = 0 };
 if (isNil "_repairCargo" || {!finite _repairCargo}) then { _repairCargo = 0 };
-
+_props = 
 [
 	["Class", _class],
 	["Position", _pos],
@@ -50,4 +50,6 @@ if (isNil "_repairCargo" || {!finite _repairCargo}) then { _repairCargo = 0 };
 	["AmmoCargo", _ammoCargo],
 	["FuelCargo", _fuelCargo],
 	["RepairCargo", _repairCargo]
-]
+];
+
+ _props
