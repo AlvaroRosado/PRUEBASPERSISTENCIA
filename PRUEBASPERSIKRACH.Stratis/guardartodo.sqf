@@ -39,10 +39,18 @@ _objCount = 0;
 	_obj = _x;
 if (alive _obj) then
 {		
-	if !(_obj == objetodetarea) then {
-		_objCount = _objCount + 1; 
+	if (isNil "objetodetarea") then {
+	_name = vehicleVarName _obj;
+	_objCount = _objCount + 1; 
 	_props = [_obj] call fn_getboxProperties;
 	[[_obj, _objCount,_props], "sfn_guardarcaja", false, false, false] call BIS_fnc_MP;	
+		}else{
+		if !(_obj == objetodetarea) then {
+		_name = vehicleVarName _obj;
+	_objCount = _objCount + 1; 
+	_props = [_obj] call fn_getboxProperties;
+	[[_obj, _objCount,_props], "sfn_guardarcaja", false, false, false] call BIS_fnc_MP;			
+		};
 		};
 
 };	
@@ -56,10 +64,16 @@ if (alive _obj) then
 				_otros = _x;
 	if (alive _otros  &&  !(_otros isKindOf "AllVehicles" || _otros isKindOf "Man" || _otros isKindOf "ReammoBox_F" || _otros isKindOf "Logic" || _otros isKindOf "ThingEffect" || _otros isKindOf "Wreck" || _otros isKindOf "WeaponHolder" ) && (_otros isKindOf "Building" || _otros isKindOf "Thing") ) then 
 	{		
-			if !(_otros == objetodetarea) then {
+			if (isNil "objetodetarea") then {
 		_otrosCount = _otrosCount + 1;
 		_props = [_otros] call fn_getObjectProperties;
 		[[_otros, _otrosCount,_props], "sfn_guardarotros", false, false, false] call BIS_fnc_MP;
+			}else{
+			if !(_otros == objetodetarea) then {
+		_otrosCount = _otrosCount + 1;
+		_props = [_otros] call fn_getObjectProperties;
+		[[_otros, _otrosCount,_props], "sfn_guardarotros", false, false, false] call BIS_fnc_MP;		
+			};
 			};
 	};
 	} forEach allMissionObjects "All";
