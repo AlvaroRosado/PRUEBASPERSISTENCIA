@@ -1,4 +1,6 @@
-//del else
+
+waituntil {!(isnil "bis_fnc_init")};
+
 if (hasInterface && !isDedicated) then {
 	waitUntil {!isNull player};
 	player setVariable["nombre", profileName, true];
