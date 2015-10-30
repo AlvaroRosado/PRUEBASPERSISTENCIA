@@ -12,6 +12,7 @@ getHitPoints = compile preprocessFileLineNumbers 'Persistencia\GUARDADO\vehiculo
 getMagazineDetailAmmo = compile preprocessFileLineNumbers 'Persistencia\GUARDADO\vehiculos\getMagazineDetailAmmo.sqf';
 fn_addToPairs = compile preprocessFileLineNumbers 'Persistencia\GUARDADO\vehiculos\fn_addToPairs.sqf';
 fn_getboxProperties = compile preprocessFileLineNumbers 'Persistencia\GUARDADO\cajas\fn_getboxProperties.sqf';
+fn_getObjectProperties  = compile preprocessFileLineNumbers 'Persistencia\GUARDADO\Objetos\fn_getObjectProperties.sqf';
 fn_numToStr= compile preprocessFileLineNumbers 'Persistencia\GUARDADO\vehiculos\fn_numToStr.sqf';
 
 fn_guardartotalveh = compile preprocessFileLineNumbers 'Persistencia\GUARDADO\guardartotalveh.sqf';
