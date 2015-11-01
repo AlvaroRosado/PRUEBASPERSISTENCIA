@@ -10,6 +10,13 @@
 
 Changelog :
 
+Ajustes 01/11/2015 by Krach v2
+- Optimizado Guardar todo.
+- Cambios carga y guardado jugadores.
+- Corregido bug ruedas ACE.
+- Corregido bug OnPlayerRespawn.
+- Cambios en estructura.
+
 Ajustes 01/11/2015 by Krach
 - Añadido guardado y carga de inits de toda clase de objetos (incluidos addactions)
 - Optimizado carga y guardado de tareas.
