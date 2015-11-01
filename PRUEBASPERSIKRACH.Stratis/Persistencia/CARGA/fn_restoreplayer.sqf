@@ -20,8 +20,7 @@ if (count _vdatos > 0 && _vcargacompleta) then {
 	};
 		
 	while { alive _unit } do {
-		
-		_unit spawn fn_guardarjugador;
-		sleep 10;
+		sleep 15;
+		_unit spawn fn_guardarjugador;		
 		};
 };

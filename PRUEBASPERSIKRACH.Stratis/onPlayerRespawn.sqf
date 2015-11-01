@@ -1,13 +1,13 @@
 
 
 //Añadimos variables
-
-		_unit setVariable["nombre", profileName, true];
-		_unit setVariable["cargacompleta", false, true];
-		_unit setVariable["datos", [], true];
-		_unit setVariable["rango", "PRIVATE", true];
-
+	waitUntil {!isNull player};
+	player setVariable["nombre", profileName, true];
+	player setVariable["cargacompleta", false, true];
+	player setVariable["datos", [], true];
+	player setVariable["rango", "PRIVATE", true];
+	
 
 // Salimos en HQ
-
+	
 	player call fn_restoreHQ;
