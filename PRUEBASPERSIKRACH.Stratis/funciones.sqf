@@ -23,7 +23,6 @@ fn_guardartotalotros = compile preprocessFileLineNumbers 'Persistencia\GUARDADO\
 sfn_guardarotros = compile preprocessFileLineNumbers 'Persistencia\GUARDADO\Objetos\sfn_guardarotros.sqf';
 sfn_guardarcaja = compile preprocessFileLineNumbers 'Persistencia\GUARDADO\cajas\sfn_guardarcaja.sqf';
 sfn_guardartarea = compile preprocessFileLineNumbers 'Persistencia\GUARDADO\tareas\sfn_guardartarea.sqf';
-sfn_pruebas = compile preprocessFileLineNumbers 'sfn_pruebas.sqf';
 sfn_guardarvehiculo = compile preprocessFileLineNumbers 'Persistencia\GUARDADO\vehiculos\sfn_guardarvehiculo.sqf';
 sfn_cargarjugador = compile preprocessFileLineNumbers 'Persistencia\CARGA\sfn_cargarjugador.sqf';
 sfn_guardarjugador = compile preprocessFileLineNumbers 'Persistencia\GUARDADO\sfn_guardarjugador.sqf';

@@ -44,7 +44,7 @@ class Mission
 	randomSeed=2048160;
 	class Intel
 	{
-		briefingName="PERSISTENTE ESUS ALPHA V41";
+		briefingName="PERSISTENTE ESUS ALPHA V40";
 		resistanceWest=0;
 		startWeather=0.29999998;
 		startWind=0.099999994;
@@ -229,20 +229,22 @@ class Mission
 		class Item0
 		{
 			position[]={1882.2563,5.5,5854.9014};
-			azimut=-137.30624;
+			azimut=-137.306;
 			id=10;
 			side="EMPTY";
 			vehicle="B_Truck_01_transport_F";
 			skill=0.60000002;
+			text="camion2";
 		};
 		class Item1
 		{
 			position[]={1891.6642,5.5,5836.4619};
-			azimut=24.009972;
+			azimut=24.01;
 			id=11;
 			side="EMPTY";
 			vehicle="C_Van_01_transport_F";
 			skill=0.60000002;
+			text="camion1";
 		};
 		class Item2
 		{
@@ -252,7 +254,9 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_SlideCastle_F";
 			skill=0.60000002;
-			init="this addAction [""GUARDAR BASE DE DATOS"", ""guardartodo.sqf""]; this addAction [""CREARCAJA"", ""crearcaja.sqf""];";
+			text="parque";
+			init="null = [this] execVM ""Inits\iniciacion1.sqf""";
+
 		};
 		class Item3
 		{
@@ -263,6 +267,8 @@ class Mission
 			lock="UNLOCKED";
 			skill=0.60000002;
 			text="ammo1";
+			init="null = [this] execVM ""Inits\iniciacion1.sqf""";
+
 		};
 		class Item4
 		{
@@ -313,15 +319,16 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_CratesWooden_F";
 			skill=0.60000002;
-			init="0 = [""AmmoboxInit"",[this,true]] spawn BIS_fnc_arsenal;";
+			text="municion";
 		};
 		class Item10
 		{
-			position[]={1817.3698,5.5,5829.5044};
+			position[]={1852.7234,5.5,5829.6782};
 			id=20;
 			side="EMPTY";
 			vehicle="LOP_UN_Mi8MTV3_FAB";
 			skill=0.40000001;
+			text="heli1";
 		};
 	};
 	class Markers

@@ -19,6 +19,9 @@ for [{_i=1},{_i<=_number},{_i=_i+1}] do {
 	_otrosID = format ["obj%1", _i];
 	_class = ["Otros", _otrosID, "Class", "STRING"] call iniDB_read;
 	_pos = ["Otros", _otrosID, "Position", "ARRAY"] call iniDB_read;
+	_initobj = ["Otros", _otrosID, "Init", "STRING"] call iniDB_read;
+	_nombre = ["Otros", _otrosID, "Nombre", "STRING"] call iniDB_read;
+
 	if (!isNil "_class" && {!isNil "_pos"}) then 
 	{
 	_dir = ["Otros", _otrosID, "Direction", "ARRAY"] call iniDB_read;
@@ -34,6 +37,10 @@ for [{_i=1},{_i<=_number},{_i=_i+1}] do {
 	};	
 	_otros allowDamage true;
 	_otros hideObjectGlobal false;
+	if (_initobj = "tieneinit") then {
+	[[[_otros, _nombre], "Inits\iniciacion2.sqf"], "BIS_fnc_execVM", true] call BIS_fnc_MP;
+
+	};
 	};
 	
 };

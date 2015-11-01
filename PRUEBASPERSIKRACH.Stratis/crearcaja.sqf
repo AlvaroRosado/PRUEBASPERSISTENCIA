@@ -1,1 +1,0 @@
-_veh = createVehicle ["Box_NATO_Wps_F", position player, [], 2, "CAN_COLLIDE"];

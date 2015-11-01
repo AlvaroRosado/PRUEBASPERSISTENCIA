@@ -8,7 +8,7 @@ class header {
 author = Clan ESUS || Krachenko || Piratajr;
 onLoadIntroTime = true;
 onLoadMissionTime = true;
-onLoadName = PRUEBAS DE PERSISTENCIA;
+onLoadName = FRAMEWORK DE PERSISTENCIA;
 
 aiKills = 0;
 briefing = 1;
@@ -26,11 +26,3 @@ corpseManagerMode = 1;
 corpseLimit = 35;
 wreckManagerMode = 1;
 wreckLimit = 10;
-
-// view distance script
-
-#include "CHVD\dialog.hpp"
-class CfgFunctions
-{
-    #include "CHVD\CfgFunctions.hpp"
-};

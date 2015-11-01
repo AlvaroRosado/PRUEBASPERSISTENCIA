@@ -1,4 +1,4 @@
-private ["_veh", "_class", "_pos","_dir","_damage","_weapons","_items","_backpacks","_vehcount","_hitPoints"];
+private ["_veh", "_class", "_pos","_dir","_damage","_weapons","_items","_backpacks","_vehcount","_hitPoints","_initveh"];
 _exists = "vehiculos" call iniDB_exists;
 _vehcount = 0;
 if (!isNil "_exists" && {_exists}) then
@@ -20,6 +20,8 @@ if (!isNil "_exists" && {_exists}) then
 	for [{_i=1},{_i<=_number},{_i=_i+1}] do {
 	_vehID = format ["Veh%1", _i];
 	_class = ["vehiculos", _vehID, "Class", "STRING"] call iniDB_read;
+	_nombre = ["vehiculos", _vehID, "Nombre", "STRING"] call iniDB_read;
+	_initveh = ["vehiculos", _vehID, "Init", "STRING"] call iniDB_read;
 	_pos = ["vehiculos", _vehID, "Position", "ARRAY"] call iniDB_read;
 	if (!isNil "_class" && {!isNil "_pos"}) then 
 	{
@@ -61,7 +63,19 @@ if (!isNil "_exists" && {_exists}) then
 	{
 	{ _veh addBackpackCargoGlobal _x } forEach _backpacks;
 	};
+	_backpackscontenido = ["vehiculos", _vehID, "BackpacksContenido", "ARRAY"] call iniDB_read;
+	if (!isNil "_backpackscontenido") then
+	{
+	{ 
+"debug_console" callExtension _x;
+sleep 5;
+	} forEach _backpackscontenido;
+	};
+	_veh setVehicleVarName _nombre;
 	_veh hideObjectGlobal false;
+	if (_initveh = "tieneinit") then {
+		[[[_veh, _nombre], "Inits\iniciacion2.sqf"], "BIS_fnc_execVM", true] call BIS_fnc_MP;
+	};
 	};
 	
 

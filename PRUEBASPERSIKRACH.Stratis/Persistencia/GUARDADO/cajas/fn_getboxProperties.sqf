@@ -5,15 +5,16 @@
 //	@file Author: AgentRev
 
 
-private ["_obj", "_class", "_pos", "_dir", "_damage", "_weapons", "_magazines", "_items", "_backpacks", "_turretMags", "_ammoCargo", "_fuelCargo", "_repairCargo"];
+private ["_obj", "_class", "_pos", "_dir", "_damage", "_weapons", "_magazines", "_items", "_backpacks", "_turretMags", "_ammoCargo", "_fuelCargo", "_repairCargo","_nombre","_initobj"];
 _obj = _this select 0;
-
+_nombre = _this select 1;
 _class = typeOf _obj;
 _pos = ASLtoATL getPosWorld _obj;
 { _pos set [_forEachIndex, _x call fn_numToStr] } forEach _pos;
 _dir = [vectorDir _obj, vectorUp _obj];
 _damage = damage _obj;
-
+_initobj = "n";
+if !(isNil {_obj getVariable ["iniciacion", ""]}) then {_initobj = _obj getVariable ["iniciacion", ""]};
 _weapons = [];
 _magazines = [];
 _items = [];
@@ -38,6 +39,7 @@ if (isNil "_repairCargo" || {!finite _repairCargo}) then { _repairCargo = 0 };
 _props = 
 [
 	["Class", _class],
+	["Nombre", _nombre],
 	["Position", _pos],
 	["Direction", _dir],
 	["Damage", _damage],
@@ -49,7 +51,9 @@ _props =
 
 	["AmmoCargo", _ammoCargo],
 	["FuelCargo", _fuelCargo],
-	["RepairCargo", _repairCargo]
+	["RepairCargo", _repairCargo],
+	["Init", _initobj]
+
 ];
 
  _props

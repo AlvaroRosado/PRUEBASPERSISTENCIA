@@ -1,4 +1,4 @@
- Modulo persistente Clan *ESUS*
+﻿ Modulo persistente Clan *ESUS*
 		
 ----------------------------
 
@@ -10,6 +10,14 @@
 
 Changelog :
 
+Ajustes 01/11/2015 by Krach
+- Añadido guardado y carga de inits de toda clase de objetos (incluidos addactions)
+- Optimizado carga y guardado de tareas.
+- Removida carpeta CHVD.
+- Organizada estructura de carpetas.
+
+Ajustes 01/11/2015 Pirata
+- Borramos pruebas de CHVD y pruebas de logo en dialogo.
 
 Ajustes 29/10/2015 by Krach
 - Corregido fallos y optimizado guardado y carga de otros objetos.

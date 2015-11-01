@@ -18,7 +18,8 @@ if (count _vdatos > 0 && _vcargacompleta) then {
 	player setPos (getMarkerPos "respawn_west");
 	
 	while { alive _unit } do {
-		
+		//Hay que recordar quitar este sleep, por otro método para el problema del respawn
+		sleep 15;
 		_unit spawn fn_guardarjugador;
 		sleep 10;
 		};

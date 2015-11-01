@@ -18,5 +18,6 @@ if (isServer || isDedicated) then {
 	execVM "Persistencia\CARGA\cargarcajas.sqf";
 	null=[]execVM "tareas\tareas.sqf";
 	execVM "Persistencia\CARGA\cargarotros.sqf";
+	execVM "iniciaciones.sqf";
 
 };

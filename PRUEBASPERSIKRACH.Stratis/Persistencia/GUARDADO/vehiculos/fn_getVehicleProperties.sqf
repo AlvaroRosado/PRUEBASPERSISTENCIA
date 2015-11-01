@@ -4,11 +4,11 @@
 //	@file Name: fn_getVehicleProperties.sqf
 //	@file Author: AgentRev
 
-private ["_veh", "_flying", "_class","_pos", "_dir", "_vel", "_fuel", "_damage", "_hitPoints", "_variables", "_doubleBSlash", "_tex", "_texArr", "_weapons", "_magazines", "_items", "_backpacks", "_turretMags", "_turretMags2", "_turretMags3", "_hasDoorGuns", "_turrets", "_path", "_ammoCargo", "_fuelCargo", "_repairCargo", "_props"];
+private ["_veh", "_flying", "_class","_pos", "_dir", "_vel", "_fuel", "_damage", "_hitPoints", "_variables", "_doubleBSlash", "_tex", "_texArr", "_weapons", "_magazines", "_items", "_backpacks", "_turretMags", "_turretMags2", "_turretMags3", "_hasDoorGuns", "_turrets", "_path", "_ammoCargo", "_fuelCargo", "_repairCargo", "_props","_nombre","_initveh"];
 
 _veh = _this select 0;
+_nombre = _this select 1;
 _flying = if (count _this > 1) then { _this select 1 } else { false };
-
 _class = typeOf _veh;
 _pos = ASLtoATL getPosWorld _veh;
 { _pos set [_forEachIndex, _x call fn_numToStr] } forEach _pos;
@@ -17,7 +17,8 @@ _vel = velocity _veh;
 _fuel = fuel _veh;
 _damage = damage _veh;
 _hitPoints = [];
-
+_initveh = "n";
+if !(isNil {_veh getVariable ["iniciacion", ""]}) then {_initveh = _veh getVariable ["iniciacion", ""]};
 {
 	_hitPoint = configName _x;
 	_hitPoints set [count _hitPoints, [_hitPoint, _veh getHitPointDamage _hitPoint]];
@@ -107,6 +108,7 @@ if (isNil "_repairCargo" || {!finite _repairCargo}) then { _repairCargo = 0 };
 _props =
 [
 	["Class", _class],
+	["Nombre", _nombre],
 	["Position", _pos],
 	["Direction", _dir],
 	["Velocity", _vel],
@@ -124,12 +126,7 @@ _props =
 
 	["AmmoCargo", _ammoCargo],
 	["FuelCargo", _fuelCargo],
-	["RepairCargo", _repairCargo]
+	["RepairCargo", _repairCargo],
+	["Init", _initveh]
 ];
-
-// If flying and not UAV, do not save current pos/dir/vel
-if (_flying && {getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") <= 0}) then
-{
-	_props deleteRange [1,3];
-};
-	_props
+_props

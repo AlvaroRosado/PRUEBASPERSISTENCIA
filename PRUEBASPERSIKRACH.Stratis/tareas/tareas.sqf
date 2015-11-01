@@ -1,5 +1,4 @@
 //chequeo si existe la base de datos de tareas
-publicVariable "tareasobj";
 _exists = "tareas" call iniDB_exists;
 _tareacount = 0;
 if (!isNil "_exists" && {_exists}) then
@@ -40,8 +39,9 @@ switch (_nombre) do {
    		["Task1", "Find and destroy an enemy ammo cache box in 50m radius", "Destroy Cache", "Destroy Cache", getMarkerPos "cache1", "created"]        
 ] call FHQ_TT_addTasks;
 ["Task1", "created"] call FHQ_TT_setTaskState;
-objetodetarea = _cache1box;
+_cache1box setVariable["objdetarea", "si", true];
 _cache1box addEventHandler ["killed",  {["Task1", "succeeded"] call FHQ_TT_setTaskState;}]
+
 };
 	};
 	};
@@ -57,9 +57,8 @@ _cache1box = "Box_FIA_Ammo_F" createVehicle getMarkerPos "cache1";
 	WEST,
    		["Task1", "Find and destroy an enemy ammo cache box in 50m radius", "Destroy Cache", "Destroy Cache", getMarkerPos "cache1", "created"]        
 ] call FHQ_TT_addTasks;
-objetodetarea = _cache1box;
+_cache1box setVariable["objdetarea", "si", true];
 _cache1box addEventHandler ["killed",  {["Task1", "succeeded"] call FHQ_TT_setTaskState;}]
 };
 
-publicVariable "objetodetarea";
 

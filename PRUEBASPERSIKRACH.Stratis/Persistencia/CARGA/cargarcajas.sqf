@@ -1,5 +1,6 @@
 _exists = "cajas" call iniDB_exists;
 _objcount = 0;
+
 if (!isNil "_exists" && {_exists}) then
 {	
 _objcount = ["cajas", "Info", "TOTAL", "STRING"] call iniDB_read;
@@ -19,9 +20,12 @@ for [{_i=1},{_i<=_number},{_i=_i+1}] do {
 	_dir = ["cajas", _cajaID, "Direction", "ARRAY"] call iniDB_read;
 	_damage = ["cajas", _cajaID, "Damage", "SCALAR"] call iniDB_read;
 	_weapons = ["cajas", _cajaID, "Weapons", "ARRAY"] call iniDB_read;
+	_nombre = ["cajas", _cajaID, "Nombre", "STRING"] call iniDB_read;
 	_magazines = ["cajas", _cajaID, "Magazines", "ARRAY"] call iniDB_read;
 	_items = ["cajas", _cajaID, "Items", "ARRAY"] call iniDB_read;
 	_backpacks = ["cajas", _cajaID, "Backpacks", "ARRAY"] call iniDB_read;
+	_initobj = ["cajas", _cajaID, "Init", "STRING"] call iniDB_read;
+
 	{ if (typeName _x == "STRING") then { _pos set [_forEachIndex, parseNumber _x] } } forEach _pos;
 	_caja = createVehicle [_class, _pos, [], 0, "None"];
 	_caja setPosWorld ATLtoASL _pos;
@@ -52,7 +56,11 @@ for [{_i=1},{_i<=_number},{_i=_i+1}] do {
 	{ _caja addBackpackCargoGlobal _x } forEach _backpacks;
 	};
 	_caja allowDamage true;
+	_caja setVehicleVarName _nombre;
 	_caja hideObjectGlobal false;
+	if (_initobj = "tieneinit") then {
+	[[[_caja, _nombre], "Inits\iniciacion2.sqf"], "BIS_fnc_execVM", true] call BIS_fnc_MP;
+	};
 	};
 	
 };
