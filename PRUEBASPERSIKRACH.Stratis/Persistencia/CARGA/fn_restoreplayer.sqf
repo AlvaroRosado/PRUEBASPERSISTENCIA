@@ -15,13 +15,8 @@ if (count _vdatos > 0 && _vcargacompleta) then {
 	[_unit, _vdatos select 3] call fn_setLoadout;
 	_unit setVariable ["rango", _vdatos select 2, true];
 	_unit setVariable ["rol", _vdatos select 5, true];
-
-	if (_vdatos select 6) then {
-	};
-		
-	while { alive _unit } do {
-		
+};
+while { alive _unit } do {
 		_unit spawn fn_guardarjugador;
 		sleep 10;
-		};
 };

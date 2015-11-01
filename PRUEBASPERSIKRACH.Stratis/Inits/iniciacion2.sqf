@@ -9,5 +9,5 @@ _OBJETO addAction ["Arsenal","Inits\arsenal.sqf"];
 };
 if (_nombre == "parque") then {
 //Aqui init, como se pondría en el editor pero cambiando en su caso this por _OBJETO
-_OBJETO addAction ["GUARDAR BASE DE DATOS","guardartodo.sqf"];
+_OBJETO addAction ["GUARDAR BASE DE DATOS","Persistencia\guardartodo.sqf"];
 };

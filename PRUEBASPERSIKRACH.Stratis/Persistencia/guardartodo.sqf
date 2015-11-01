@@ -19,10 +19,32 @@ FHQ_TTI_TaskList call FHQ_TTI_UpdateTaskList;
 
 } forEach FHQ_TTI_TaskList; 
 
-//GUARDADO DE VEHÍCULOS 
+//GUARDANDO TODOS
+_objCount = 0;
 _vehCount = 0;
+_otrosCount = 0;
+_total = 0;
 {
-			_veh = _x;
+_objetos = _x;
+	
+	if (_objetos isKindOf "ReammoBox_F") then {
+	_obj = _objetos;
+if (alive _obj) then
+{	
+	if (!isNil {_obj getVariable ["objdetarea", ""]}) then {
+	_esobjtarea = _obj getVariable ["objdetarea", ""];
+	if !(_esobjtarea == "si") then {
+		_nombre = vehicleVarName _obj;
+	_objCount = _objCount + 1; 
+	_props = [_obj,_nombre] call fn_getboxProperties;
+	[[_obj, _objCount,_props], "sfn_guardarcaja", false, false, false] call BIS_fnc_MP;	
+	};
+	};
+};	
+		
+	};
+	if (_objetos isKindOf "AllVehicles") then {
+	_veh = _objetos;
 if (alive _veh  &&  !(_veh isKindOf "Man" || _veh isKindOf "StaticWeapon")) then
 {		
 	if (!isNil {_veh getVariable ["objdetarea", ""]}) then {
@@ -36,35 +58,10 @@ if (alive _veh  &&  !(_veh isKindOf "Man" || _veh isKindOf "StaticWeapon")) then
 	};
 	
 };
-} forEach allMissionObjects "AllVehicles";
-
-//GUARDADO DE CAJAS DE MUNICIÓN 
-
-_objCount = 0;
-
-{
-	_obj = _x;
-if (alive _obj) then
-{	
-	if (!isNil {_obj getVariable ["objdetarea", ""]}) then {
-	_esobjtarea = _obj getVariable ["objdetarea", ""];
-	if !(_esobjtarea == "si") then {
-		_nombre = vehicleVarName _obj;
-	_objCount = _objCount + 1; 
-	_props = [_obj,_nombre] call fn_getboxProperties;
-	[[_obj, _objCount,_props], "sfn_guardarcaja", false, false, false] call BIS_fnc_MP;	
-	};
-	};
-};	
-
-} forEach allMissionObjects "ReammoBox_F";
-
-//GUARDADO TODO otros
-
-	_otrosCount = 0;
-	{
-				_otros = _x;
-	if (alive _otros  &&  !(_otros isKindOf "AllVehicles" || _otros isKindOf "Man" || _otros isKindOf "ReammoBox_F" || _otros isKindOf "Logic" || _otros isKindOf "ThingEffect" || _otros isKindOf "Wreck" || _otros isKindOf "WeaponHolder" ) && (_otros isKindOf "Building" || _otros isKindOf "Thing") ) then 
+	}else {
+	_otros = _objetos;
+	_clase = typeOf _otros;
+	if (alive _otros  &&  !(_otros isKindOf "AllVehicles" || _otros isKindOf "Man" || _otros isKindOf "ReammoBox_F" || _otros isKindOf "Logic" || _otros isKindOf "ThingEffect" || _otros isKindOf "Wreck" || _otros isKindOf "WeaponHolder" || _clase == "ACE_Wheel") && (_otros isKindOf "Building" || _otros isKindOf "Thing") ) then 
 	{		
 		if (!isNil {_otros getVariable ["objdetarea", ""]}) then {
 			_esobjtarea = _otros getVariable ["objdetarea", ""];
@@ -75,9 +72,11 @@ if (alive _obj) then
 		[[_otros, _otrosCount,_props], "sfn_guardarotros", false, false, false] call BIS_fnc_MP;
 		};	
 		};		
+	};	
 	};
-	} forEach allMissionObjects "All";
-	hint format ["Base de Datos Guardada!\n Número de vehículos guardados: %1\n  Número de cajas guardadas: %2\n Número de tareas guardadas: %3\n Número de objetos guardados: %4\n",_vehcount,_objCount,_tareacount,_otrosCount];
+} forEach allMissionObjects "All";
+_total = _vehcount + _objCount + _tareacount + _otrosCount;
+	hint format ["Base de Datos Guardada!\n Número de vehículos guardados: %1\n  Número de cajas guardadas: %2\n Número de tareas guardadas: %3\n Número de objetos guardados: %4\n  Total de elementos: %5\n",_vehcount,_objCount,_tareacount,_otrosCount,_total];
 	[[_vehCount], "fn_guardartotalveh", false, false, false] call BIS_fnc_MP;
 	[[_objCount], "fn_guardartotalcaj", false, false, false] call BIS_fnc_MP;
 	[[_tareacount], "fn_guardartotaltareas", false, false, false] call BIS_fnc_MP;
